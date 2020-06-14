@@ -1,0 +1,53 @@
+package apiTestActions;
+
+import com.jayway.restassured.response.Response;
+import java.io.IOException;
+import static com.jayway.restassured.RestAssured.given;
+
+public class ApiRequests {
+
+    private Response responsePost;
+    String responseString = null;
+
+    public String putAPI(String apiEndPoint, String requiredPayLoad) throws IOException {
+
+        responsePost = given().
+                header("Content-Type", "application/json; charset=UTF-8").
+                header("Host", "<<host details here e.g. IP and port number>>").
+                header("Origin", "<<URL here>>").
+                body(requiredPayLoad).
+                put(apiEndPoint);
+
+        responseString = responsePost.asString();
+        return responseString;
+    }
+
+
+    public String deleteAPI(String apiEndPoint, String requiredPayLoad) throws IOException {
+
+        responsePost = given().
+                header("Content-Type", "application/json; charset=UTF-8").
+                header("Host", "<<host details here e.g. IP and port number>>").
+                header("Origin", "<<URL here>>").
+                body(requiredPayLoad).
+                delete(apiEndPoint);
+
+        responseString = responsePost.asString();
+        return responseString;
+    }
+
+
+    public String postAPI(String apiEndPoint, String requiredPayLoad) throws IOException {
+
+        responsePost = given().
+                header("Content-Type", "application/json; charset=UTF-8").
+                header("Host", "<<host details here e.g. IP and port number>>").
+                header("Origin", "<<URL here>>").
+                body(requiredPayLoad).
+                post(apiEndPoint);
+
+        responseString = responsePost.asString();
+        return responseString;
+    }
+
+}

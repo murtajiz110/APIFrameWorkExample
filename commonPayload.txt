@@ -1,0 +1,68 @@
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "SessionId",
+        "RequestId",
+        "UserId",
+        "UserName"       
+})
+
+public class CommonPayLoad {
+
+    @JsonProperty("SessionId")
+    private String sessionId;
+    @JsonProperty("RequestId")
+    private String requestId;
+    @JsonProperty("UserId")
+    private String userId;
+    @JsonProperty("UserName")
+    private String userName;   
+
+    @JsonProperty("SessionId")
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    @JsonProperty("SessionId")
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    @JsonProperty("RequestId")
+    public String getRequestId() {
+        return requestId;
+    }
+
+    @JsonProperty("RequestId")
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    @JsonProperty("UserId")
+    public String getUserId() {
+        return userId;
+    }
+
+    @JsonProperty("UserId")
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    @JsonProperty("UserName")
+    public String getUserName() {
+        return userName;
+    }
+
+    @JsonProperty("UserName")
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+	
+	// setting values in constructor
+	public CommonPayLoad(){
+		this.setSessionId( << set sessionId here >>);
+         this.setRequestId(<< set requestId here >>);
+         this.setUserName(<< set userName here >>);
+         this.setUserId(<< set userId here >>);
+	}
+	
+	}

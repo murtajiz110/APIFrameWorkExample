@@ -1,0 +1,67 @@
+package apiPojoDefs;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "SessionId",
+        "RequestId",
+        "OperationStatus",
+        "RowsUpdated"
+        
+})
+public class CommonResponse {
+
+    @JsonProperty("SessionId")
+    private String sessionId;
+    @JsonProperty("RequestId")
+    private String requestId;
+    @JsonProperty("OperationStatus")
+    private OperationStatus operationStatus;
+    @JsonProperty("RowsUpdated")
+    private Integer rowsUpdated;    
+
+
+    @JsonProperty("SessionId")
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    @JsonProperty("SessionId")
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    @JsonProperty("RequestId")
+    public String getRequestId() {
+        return requestId;
+    }
+
+    @JsonProperty("RequestId")
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    @JsonProperty("OperationStatus")
+    public OperationStatus getOperationStatus() {
+        return operationStatus;
+    }
+
+    @JsonProperty("OperationStatus")
+    public void setOperationStatus(OperationStatus operationStatus) {
+        this.operationStatus = operationStatus;
+    }
+
+    @JsonProperty("RowsUpdated")
+    public Integer getRowsUpdated() {
+        return rowsUpdated;
+    }
+
+    @JsonProperty("RowsUpdated")
+    public void setRowsUpdated(Integer rowsUpdated) {
+        this.rowsUpdated = rowsUpdated;
+    }    
+
+}

@@ -1,0 +1,60 @@
+package apiPojoDefs.payLoads;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import java.math.BigInteger;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+
+		"Property1"
+        << json properties list
+		for all the json properties required
+		in each payload of each CRUD operation
+		like Create, Retrieve, Update, Delete>>
+})
+
+public class PL_ClassName {
+
+    public class CreateOperation extends CommonPayLoad {
+
+        @JsonProperty("Property1")
+        private BigInteger Property1;        
+
+        @JsonProperty("Property1")
+        public BigInteger getProperty1() {
+            return Property1;
+        }
+
+        @JsonProperty("Property1")
+        public void setProperty1(BigInteger Property1) {
+            this.Property1 = Property1;
+        }       
+
+    }
+
+    public class DeleteOperation extends CommonPayLoad {
+
+        json poperties and their getters and setters here 
+		i.e. the POJO class code obtained using 'json schema to pojo' online application
+
+    }
+
+    public class UpdateOperation extends CommonPayLoad {
+
+        json poperties and their getters and setters here 
+		i.e. the POJO class code obtained using 'json schema to pojo' online application
+
+    }
+	
+	public class RetrieveOperation extends CommonPayLoad {
+
+        json poperties and their getters and setters here 
+		i.e. the POJO class code obtained using 'json schema to pojo' online application
+
+    }
+	
+
+}
